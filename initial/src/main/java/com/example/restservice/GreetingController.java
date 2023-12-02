@@ -20,4 +20,14 @@ public class GreetingController {
     }
 
     @GetMapping("/greetings/{id}")
-    public Greeting getGreeting(@PathVar
+    public Greeting getGreeting(@PathVariable String id){
+        return greetingService.getGreeting(id);
+    }
+
+    @PostMapping("/greetings")
+    public void addGreeting(@RequestBody Greeting greeting){
+        greetingService.addGreeting(greeting);
+    }
+
+}
+
